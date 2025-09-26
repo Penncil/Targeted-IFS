@@ -24,7 +24,7 @@ In this repository, we include a synthetic dataset `sample_data_to_run.csv` that
    source("simulation_heter[1].R")
    source("simulation_sensitive.R")
    ```
-4. Each script writes its outputs as `.rds` files.
+4. Each script writes its outputs as `.rds` files and save to simulation_result file.
 6. To recreate the Table 1 in the manuscript, run:
    ```r
    source("Table1.R")
