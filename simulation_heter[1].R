@@ -1,10 +1,9 @@
 library(glmtrans)
 library(glmnet)
 library(mvtnorm)
-#library(lars)
+
 library(pROC)
-#setwd("~/R")   # Set your working directory
-#Rcpp::sourceCpp("coordi_c.cpp")
+
 source("Functions_GLM[1].R")
 #######generate data######
 
@@ -59,6 +58,8 @@ compare.method<-function(data.train){
   return(result)
 }
 
+
+setwd("~/simulation_result")   # Save the results to the simulation_result file (or specify your own directory)
 
 ###########simulation (i)+(ii), h=10
 M=5
