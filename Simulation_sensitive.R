@@ -2,7 +2,6 @@ library(glmtrans)
 library(glmnet)
 library(mvtnorm)
 library(pROC)
-#setwd("~/R")   # Set your working directory
 source("Functions_GLM[1].R")
 #######generate data######
 compare.method<-function(data.train){
@@ -46,9 +45,7 @@ compare.method<-function(data.train){
 
 
 
-
-
-
+setwd("~/simulation_result")   # Save the results to the simulation_result file (or specify your own directory)
 ###########simulation 
 Ah<-0
 n.target <-300 #sample size in each site
