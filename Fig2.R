@@ -2,7 +2,7 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-#setwd("~/R")   # Set your working directory
+setwd("~/simulation_result")   # Save the results to the simulation_result file (or specify your own directory)
 set.seed(123)  # For reproducibility
 
 # Parameters
