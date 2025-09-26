@@ -1,6 +1,7 @@
 library(ggplot2)
 library(ggh4x)
-#setwd("~/R")   # Set your working directory
+setwd("~/simulation_result")  # Read the simulation results from the simulation_result file (or from the directory you specified)
+
 result1<-readRDS(file="adap_n300p500_Ah10_heter.rds")
 
 n<-dim(result1)[1]
