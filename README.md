@@ -14,6 +14,7 @@ This repository contains code to reproduce the simulation studies and the real d
 
 Fig1.pptx contains the figure corresponding to Figure 1 in the manuscript, which illustrates three different types of sources.
 
+In this repository, we include a synthetic dataset `sample_data_to_run.csv` that was generated to approximate the structure of the real-world COVID-19 pediatric dataset. The original dataset includes 3,990 patients from 34 clinical sites and 243 binary covariates, but due to privacy and data use restrictions, we cannot share the raw patient-level data. To create a reproducible example, we generated a synthetic dataset with 4,000 patients across 35 clinical sites, containing 243 binary covariates and one binary outcome. The marginal distributions and correlation structure of the features were designed to resemble those of the original dataset, ensuring that the synthetic data are representative for testing and reproducing the analysis pipeline, while containing no identifiable patient information.
 ## 2. Reproducing the simulation studies
 
 1. Open R or RStudio.
