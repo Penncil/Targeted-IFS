@@ -11,10 +11,10 @@ source("Functions_GLM[1].R")
 
 compare.method<-function(data.train){
   
-  Target<-data.tran$Target
-  Source<-data.tran$Source
-  Test<-data.tran$Test
-  theta.true<-data.tran$theta
+  Target<-data.train$Target
+  Source<-data.train$Source
+  Test<-data.train$Test
+  theta.true<-data.train$theta
   
  
   ####local lasso using target only
@@ -77,7 +77,7 @@ for (Ah in 0:M) {
   re<-1 
   while(re<=Re) {
     
-    data.tran<-data.generate(cov.type=2,
+    data.train<-data.generate(cov.type=2,
                              M=M, # number of source
                              Ah=Ah, #number of similar source
                              h=10,
@@ -128,7 +128,7 @@ for (Ah in 0:M) {
   re<-1 
   while(re<=Re) {
     
-    data.tran<-data.generate1(cov.type=2,
+    data.train<-data.generate1(cov.type=2,
                               M=M, # number of source
                               Ah=Ah, #number of similar source
                               h=10,
@@ -177,7 +177,7 @@ for (M in c(2,4,6,8,10,12)) {
   n.source=rep(600, M)
   while(re<=Re) {
     
-    data.tran<-data.generate(cov.type=2,
+    data.train<-data.generate(cov.type=2,
                              M=M, # number of source
                              Ah=Ah, #number of similar source
                              h=10,
@@ -228,7 +228,7 @@ for (Ah in 0:M) {
   re<-1 
   while(re<=Re) {
     
-    data.tran<-data.generate(cov.type=2,
+    data.train<-data.generate(cov.type=2,
                              M=M, # number of source
                              Ah=Ah, #number of similar source
                              h=20,
@@ -279,7 +279,7 @@ for (Ah in 0:M) {
   re<-1 
   while(re<=Re) {
     
-    data.tran<-data.generate1(cov.type=2,
+    data.train<-data.generate1(cov.type=2,
                               M=M, # number of source
                               Ah=Ah, #number of similar source
                               h=20,
@@ -328,7 +328,7 @@ for (M in c(2,4,6,8,10,12)) {
   n.source=rep(600, M)
   while(re<=Re) {
     
-    data.tran<-data.generate(cov.type=2,
+    data.train<-data.generate(cov.type=2,
                              M=M, # number of source
                              Ah=Ah, #number of similar source
                              h=20,
