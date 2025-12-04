@@ -6,10 +6,10 @@ source("Functions_GLM[1].R")
 #######generate data######
 compare.method<-function(data.train){
   
-  Target<-data.tran$Target
-  Source<-data.tran$Source
-  Test<-data.tran$Test
-  theta.true<-data.tran$theta
+  Target<-data.train$Target
+  Source<-data.train$Source
+  Test<-data.train$Test
+  theta.true<-data.train$theta
   
   sca<-c(0.25,0.5,1,2,4)
   ####local lasso using target only
@@ -63,7 +63,7 @@ re<-1
 
   while(re<=Re) {
     
-    data.tran<-data.generate(cov.type=2,
+    data.train<-data.generate(cov.type=2,
                              M=M, # number of source
                              Ah=Ah, #number of similar source
                              h=10,
