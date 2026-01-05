@@ -54,26 +54,3 @@ print(p_auc)
 df_err <- mat_to_forest_df(err_res)
 p_err <- plot_forest_refined(df_err, xlab = "Classification error rate")
 print(p_err)
-
-
-
-# ========== To reproduce point_est and boot_res, please first contact the authors to get the real dataset "real_data.rds", and then run
-# source("Functions_GLM_real_data.R")
-# my_seed <- 38
-# real_data <- readRDS("real_data.rds")
-# outcome_list <- real_data$outcome_list
-# covariate_list <- real_data$covariate_list
-# 
-# point_est <- point_est_AUC(outcome_list = outcome_list,
-#                            covariate_list = covariate_list,
-#                            random_seed = my_seed)
-# 
-# num_replicate <- 200
-# boot_res <- as.list(rep(NA, num_replicate))
-# for (boot in seq_len(num_replicate)) {
-#   boot_res[[boot]] <- tryCatch(bootstrap_fun(boot = boot, outcome_list = outcome_list,
-#                                              covariate_list = covariate_list,
-#                                              random_seed = my_seed),
-#                                error = function(e) NA)
-#   print(boot)
-# }
