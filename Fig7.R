@@ -5,7 +5,7 @@ library(pROC)
 library(ggplot2)
 library(reshape2)
 source("Functions_GLM_real_data.R")
-setwd("~/simulation_result")  # Read the simulation results from the simulation_result file (or from the directory you specified)
+setwd("~/simulation_result")  # Read the analysis results from the simulation_result file (or from the directory you specified)
 point_est <- readRDS("point_est.rds")
 AUC_point <- point_est$AUC
 err_point <- point_est$error
