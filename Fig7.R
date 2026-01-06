@@ -4,13 +4,14 @@ library(glmtrans)
 library(pROC)
 library(ggplot2)
 library(reshape2)
-
+source("Functions_GLM_real_data.R")
 setwd("~/simulation_result")  # Read the simulation results from the simulation_result file (or from the directory you specified)
 point_est <- readRDS("point_est.rds")
 AUC_point <- point_est$AUC
 err_point <- point_est$error
 
 boot_res <- readRDS("boot_res.rds")
+num_replicate <- 200
 AUC_boot <- c()
 error_boot <- c()
 for(i in 1:num_replicate){
@@ -20,8 +21,8 @@ for(i in 1:num_replicate){
   }
 }
 
-AUC_sd <- apply(AUC_mat, MARGIN = 2, sd)
-err_sd <- apply(error_mat, MARGIN = 2, sd)
+AUC_sd <- apply(AUC_boot, MARGIN = 2, sd)
+err_sd <- apply(error_boot, MARGIN = 2, sd)
 
 
 AUC_upper <- AUC_point + qnorm(0.975) * AUC_sd
