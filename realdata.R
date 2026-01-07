@@ -5,6 +5,7 @@ library(pROC)
 library(ggplot2)
 library(reshape2)
 source("Functions_GLM_real_data.R")
+setwd("~/simulation_result")  # Read the simulated sample dataset from the simulation_result file (or from the directory you specified)
 real_data <- readRDS("sample_data.rds")
 outcome_list <- real_data$outcome_list
 covariate_list <- real_data$covariate_list
