@@ -45,7 +45,7 @@ Fig1.pptx contains the figure corresponding to Figure 1 in the manuscript, which
    ```r
    source("Fig7.R")
    ```
-4. To reproduct the main results in the real data analysis, please contact the authors to get the real dataset "real_data.rds", and then run the script:
+4. We provide a simulated sample dataset that enables readers to reproduce results closely matching those reported in the manuscript. To the analysis, run
    ```r
    source("realdata.R")
    ```
