@@ -5,7 +5,7 @@ library(pROC)
 library(ggplot2)
 library(reshape2)
 source("Functions_GLM_real_data.R")
-real_data <- readRDS("real_data.rds")
+real_data <- readRDS("sample_data.rds")
 outcome_list <- real_data$outcome_list
 covariate_list <- real_data$covariate_list
 site_size <- real_data$site_size
