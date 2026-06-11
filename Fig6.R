@@ -30,11 +30,22 @@ res2<-rbind(res3,res2[-c(1:3),])
 
 res2$Ah_factor<-factor(res2$Ah,levels = c(0.25, 0.5, 1, 2, 4))
 
-a<-bquote("Different scales of " ~ lambda[beta]^local)
+a<-bquote("Different scales of " ~ c[lambda])
 print(a)
 
+local_ref <- res2 %>%
+  filter(method == "Local", Ah_factor == 1) %>%
+  select(type, local_value = value)
+
+res2_fixed <- res2 %>%
+  left_join(local_ref, by = "type") %>%
+  mutate(
+    value = if_else(method == "Local", local_value, value)
+  ) %>%
+  select(-local_value)
+
 cols <- c("#FFB000","#8C3333","#D2691E")
-plot <- ggplot2::ggplot(res2, ggplot2::aes(x = Ah_factor, y = value, color = method,group =method))
+plot <- ggplot2::ggplot(res2_fixed, ggplot2::aes(x = Ah_factor, y = value, color = method,group =method))
 plot <- plot + 
   geom_point(aes(shape = method,size=method))+
   scale_shape_manual(values = c(10,16,17))+
@@ -66,6 +77,7 @@ plot <- plot +
   guides(color=guide_legend(nrow=1, byrow=TRUE))
 
 plot
+
 
 
 
